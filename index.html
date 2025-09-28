@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta name="google" content="notranslate">
+    <meta charset="UTF-8">
+    <title>团支书竞选 - 崔宇杰</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+            color: #333;
+        }
+        .slide {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        ul {
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+        li {
+            margin: 10px 0;
+        }
+        .nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .highlight {
+            background: #e74c3c;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- 第1页：封面 -->
+    <div class="slide active">
+        <h1>团支书竞选陈述</h1>
+        <p style="text-align: center; font-size: 1.2em; margin-top: 50px;">
+            崔宇杰<br>
+            <span style="color: #666;">让班级生活更有趣 · 更轻松</span>
+        </p >
+    </div>
+
+    <!-- 第2页：自我介绍 - 突出亲和力 -->
+    <div class="slide">
+        <h1>关于我</h1>
+        <ul>
+            <li>一个<span class="highlight">好相处、有耐心</span>的普通同学</li>
+            <li>喜欢和大家一起玩游戏、交流学习</li>
+            <li>愿意倾听每个人的想法，<span class="highlight">不急于下结论</span></li>
+            <li>相信班级工作应该<span class="highlight">有趣且轻松</span></li>
+        </ul>
+    </div>
+
+    <!-- 第3页：活动承诺 - 娱乐化重点 -->
+    <div class="slide">
+        <h1>我的活动承诺：让班级更有趣</h1>
+        <h2>🎮 游戏竞技类</h2>
+        <ul>
+            <li><span class="highlight">王者荣耀/无畏契约班赛</span> - 自由组队，欢乐竞技</li>
+            <li>线上游戏交流会 - 分享技巧，结交战友</li>
+        </ul>
+        
+        <h2>🎭 才艺展示类</h2>
+        <ul>
+            <li><span class="highlight">班级才艺会</span> - 唱歌、跳舞、任何特长都欢迎</li>
+            <li>短视频剪辑workshop - 一起学习制作有趣视频</li>
+        </ul>
+        
+        <h2>🤝 技能交换类</h2>
+        <ul>
+            <li>"技能市集" - 你教我游戏，我帮你学习</li>
+            <li>轻松学习小组 - 在愉快氛围中共同进步</li>
+        </ul>
+        
+        <p style="text-align: center; margin-top: 20px; font-style: italic;">
+            <span class="highlight">目标：</span>让每次活动都成为大家期待的聚会
+        </p >
+    </div>
+
+    <!-- 第4页：工作理念 -->
+    <div class="slide">
+        <h1>我的工作理念</h1>
+        <ul>
+            <li><span class="highlight">零压力参与</span> - 活动自愿参加，绝不强制</li>
+            <li><span class="highlight">大家的想法最重要</span> - 每次活动前都会征集意见</li>
+            <li><span class="highlight">过程重于结果</span> - 享受在一起的时光最重要</li>
+            <li><span class="highlight">持续改进</span> - 根据反馈不断优化活动形式</li>
+        </ul>
+        
+        <div style="background: #f8f9fa; padding: 15px; border-radius: 5px; margin-top: 20px;">
+            <p>"我希望班级工作不是负担，而是大学生活中<span class="highlight">快乐的组成部分</span>。"</p >
+        </div>
+    </div>
+
+    <!-- 第5页：结束 -->
+    <div class="slide">
+        <h1>谢谢大家</h1>
+        <p style="text-align: center; margin-top: 50px;">
+            选我，就是选择一种<span class="highlight">轻松愉快</span>的班级氛围<br><br>
+            <span style="color: #666;">—— 崔宇杰，一个愿意为大家创造快乐的同学</span>
+        </p >
+    </div>
+
+    <div class="nav">
+        <button onclick="prevSlide()">上一页</button>
+        <button onclick="nextSlide()">下一页</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[n].classList.add('active');
+        }
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+
+        // 键盘支持
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+</body>
+</html>
